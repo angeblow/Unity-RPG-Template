@@ -2,6 +2,131 @@
     "name": "General",
     "maps": [
         {
+            "name": "Player",
+            "id": "eacc5da0-1274-46ab-bf56-364d865c49da",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "PassThrough",
+                    "id": "9863baeb-2e4c-4309-97f5-f6eda4d23fe1",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Camera",
+                    "type": "PassThrough",
+                    "id": "88cbd2ce-e42f-4d01-9af3-56f6cf8912ec",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "FindLeft",
+                    "type": "Button",
+                    "id": "da9fc016-4bcc-44f4-8d9d-78d5665a7d3d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "FindRight",
+                    "type": "Button",
+                    "id": "4fb6386f-862d-4ec5-bc82-ad8eb08355f4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Sprint",
+                    "type": "Button",
+                    "id": "ebc4def8-9096-46e7-9210-161aebc4a080",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c6af266b-dc48-431f-9e87-2be20823bc60",
+                    "path": "<HID::Nintendo Wireless Gamepad>/hat",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "DualJoycon",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3093b1c2-1cf7-4de4-8e42-501fd09fba09",
+                    "path": "<HID::Unknown Joy-Con (L)>/hat",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "DualJoycon",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d842cb65-5ebf-4fc7-9f20-902e2290baf2",
+                    "path": "<HID::Nintendo Wireless Gamepad>/hat",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "DualJoycon",
+                    "action": "Camera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "98e06f85-9d2b-45e8-9392-1537ff65ee1b",
+                    "path": "<HID::Unknown Joy-Con (R)>/hat",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "DualJoycon",
+                    "action": "Camera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2518ca16-fc54-4ef4-b5d5-2db896248bad",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button15",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "DualJoycon",
+                    "action": "FindLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "17ed6b67-5c95-4938-aa72-3acaaebc9c88",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button16",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "DualJoycon",
+                    "action": "FindRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fdc99332-bbd5-43f0-bcc6-14c5bdfaf109",
+                    "path": "<HID::Unknown Joy-Con (R)>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "DualJoycon",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "UI",
             "id": "31341680-bbd3-41b4-9040-208a711918a9",
             "actions": [
@@ -238,90 +363,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "TrackedDeviceOrientation",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Player",
-            "id": "eacc5da0-1274-46ab-bf56-364d865c49da",
-            "actions": [
-                {
-                    "name": "Move",
-                    "type": "PassThrough",
-                    "id": "9863baeb-2e4c-4309-97f5-f6eda4d23fe1",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Camera",
-                    "type": "PassThrough",
-                    "id": "88cbd2ce-e42f-4d01-9af3-56f6cf8912ec",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "FindLeft",
-                    "type": "Button",
-                    "id": "da9fc016-4bcc-44f4-8d9d-78d5665a7d3d",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "FindRight",
-                    "type": "Button",
-                    "id": "4fb6386f-862d-4ec5-bc82-ad8eb08355f4",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "c6af266b-dc48-431f-9e87-2be20823bc60",
-                    "path": "<HID::Nintendo Wireless Gamepad>/hat",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "DualJoycon",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d842cb65-5ebf-4fc7-9f20-902e2290baf2",
-                    "path": "<HID::Nintendo Wireless Gamepad>/hat",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "DualJoycon",
-                    "action": "Camera",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2518ca16-fc54-4ef4-b5d5-2db896248bad",
-                    "path": "<HID::Nintendo Wireless Gamepad>/button15",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "DualJoycon",
-                    "action": "FindLeft",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "17ed6b67-5c95-4938-aa72-3acaaebc9c88",
-                    "path": "<HID::Nintendo Wireless Gamepad>/button16",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "DualJoycon",
-                    "action": "FindRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

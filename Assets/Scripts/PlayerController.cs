@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Users;
 
@@ -28,6 +29,17 @@ public class PlayerController : MonoBehaviour
     Vector3 cameraVector;
 
     float movementSpeed = 2.9f;
+
+
+    float walkSpeed = 2.9f;
+    float runSpeed = 5.5f;
+    float currentStamina = 10f;
+    float maxStamina = 60f;
+    bool isSprinting = false;
+    bool isExhausted = false;
+    [SerializeField]
+    Image staminaWheel;
+
     InputDevice jcLeft;
     InputDevice jcRight;
     // Start is called before the first frame update
@@ -62,13 +74,48 @@ public class PlayerController : MonoBehaviour
         {
             animations.SetBool("isMoving", false);
         }
+
+
         movementVector.Set(-stickVector.y, 0, stickVector.x);
         cameraVector.Set(cameraVector.x + rStickVector.x, cameraVector.y + rStickVector.y, 0);
     }
 
     void FixedUpdate()
     {
-        if(movementVector.magnitude >= 0.1f)
+        staminaWheel.fillAmount = currentStamina / maxStamina;
+        if (isExhausted)
+        {
+            staminaWheel.color = Color.red;
+            if (currentStamina != maxStamina)
+            {
+                currentStamina = Mathf.Min(currentStamina += 0.1f, maxStamina);
+                movementSpeed = walkSpeed;
+            }
+            else
+            {
+                isExhausted = false;
+                staminaWheel.color = Color.green;
+            }
+        }
+        else
+        {
+            if (currentStamina <= 0)
+            {
+                isExhausted = true;
+            }
+            if (isSprinting && currentStamina > 0 && !isExhausted)
+            {
+                currentStamina -= 0.25f;
+                movementSpeed = runSpeed;
+            }
+            else if (!isSprinting && currentStamina > 0 && !isExhausted)
+            {
+                currentStamina = Mathf.Min(currentStamina += 0.2f, maxStamina);
+                movementSpeed = walkSpeed;
+            }
+        }
+
+        if (movementVector.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(stickVector.y, -stickVector.x) * Mathf.Rad2Deg + CamAnchor.transform.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
@@ -100,6 +147,14 @@ public class PlayerController : MonoBehaviour
         if (context.control.device == jcRight)
         {
             rStickVector = context.ReadValue<Vector2>();
+        }
+    }
+
+    public void OnSprintActive(InputAction.CallbackContext context)
+    {
+        if(context.control.device == jcRight)
+        {
+            isSprinting = context.ReadValueAsButton();
         }
     }
 }
