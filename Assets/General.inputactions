@@ -123,6 +123,17 @@
                     "action": "Sprint",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fd1796ff-d7f5-42d7-b1ff-b8f2e3ed64d4",
+                    "path": "<HID::Nintendo Wireless Gamepad>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "DualJoycon",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
