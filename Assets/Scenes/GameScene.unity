@@ -2306,7 +2306,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16042
+  m_Name: pb_Mesh14782
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2643,6 +2643,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ebc4def8-9096-46e7-9210-161aebc4a080
     m_ActionName: Player/Sprint[/Unknown Joy-Con (R)/trigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1219707393}
+        m_MethodName: OnJumpPressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8456cfbd-de24-476c-a8ad-2ff428eec6b4
+    m_ActionName: Player/Jump[/Nintendo Wireless Gamepad/button3,/Nintendo Wireless
+      Gamepad/button3]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: DualJoycon
   m_DefaultActionMap: Player
@@ -3233,7 +3249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PolyMesh:
-    name: pb_Mesh16086
+    name: pb_Mesh14826
     vertices:
     - {x: -10, y: -0.5, z: 10}
     - {x: 10, y: -0.5, z: 10}
@@ -3714,7 +3730,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16086
+  m_Name: pb_Mesh14826
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

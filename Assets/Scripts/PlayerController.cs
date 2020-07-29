@@ -40,6 +40,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     Image staminaWheel;
 
+    bool jumpedPressed = false;
+    float jumpApexTime = 1.4f;
+    float jumpTimeStamp;
+    Vector3 playerVerticalVelocity;
+
     InputDevice jcLeft;
     InputDevice jcRight;
     // Start is called before the first frame update
@@ -56,11 +61,13 @@ public class PlayerController : MonoBehaviour
         rStickVector = new Vector2();
         cameraVector = new Vector3();
 
+        jumpTimeStamp = Time.time;
 
         InputUser.PerformPairingWithDevice(InputSystem.devices[2], user);
         InputUser.PerformPairingWithDevice(InputSystem.devices[3], user);
         jcLeft = user.pairedDevices[0];
         jcRight = user.pairedDevices[1];
+
     }
 
     // Update is called once per frame
@@ -82,10 +89,14 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        //animations.SetFloat("yVel", -controller.velocity.y);
+        animations.SetBool("isGrounded", controller.isGrounded);
         staminaWheel.fillAmount = currentStamina / maxStamina;
         if (isExhausted)
         {
+            animations.SetBool("isRunning", false);
             staminaWheel.color = Color.red;
+            
             if (currentStamina != maxStamina)
             {
                 currentStamina = Mathf.Min(currentStamina += 0.1f, maxStamina);
@@ -105,16 +116,18 @@ public class PlayerController : MonoBehaviour
             }
             if (isSprinting && currentStamina > 0 && !isExhausted)
             {
+                animations.SetBool("isRunning", true);
                 currentStamina -= 0.25f;
                 movementSpeed = runSpeed;
             }
             else if (!isSprinting && currentStamina > 0 && !isExhausted)
             {
+                animations.SetBool("isRunning", false);
                 currentStamina = Mathf.Min(currentStamina += 0.2f, maxStamina);
                 movementSpeed = walkSpeed;
             }
         }
-
+        
         if (movementVector.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(stickVector.y, -stickVector.x) * Mathf.Rad2Deg + CamAnchor.transform.eulerAngles.y;
@@ -123,10 +136,22 @@ public class PlayerController : MonoBehaviour
             Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDirection.normalized * movementSpeed * Time.deltaTime);
         }
+
+        //playerVerticalVelocity -= Vector3.down * 9.81f;
         if (!controller.isGrounded)
         {
-            controller.Move(Vector3.down * 9.81f * Time.deltaTime);
+            playerVerticalVelocity = 9.81f * Vector3.down;
         }
+        else
+        {
+            playerVerticalVelocity = Vector3.down;
+            if (jumpedPressed == true && Time.time > jumpTimeStamp + jumpApexTime)
+            {
+                jumpTimeStamp = Time.time;
+                playerVerticalVelocity +=  Vector3.up * 26f;
+            }
+        }
+        controller.Move(playerVerticalVelocity * Time.deltaTime);
     }
 
     void LateUpdate()
@@ -155,6 +180,13 @@ public class PlayerController : MonoBehaviour
         if(context.control.device == jcRight)
         {
             isSprinting = context.ReadValueAsButton();
+        }
+    }
+    public void OnJumpPressed(InputAction.CallbackContext context)
+    {
+        if(context.control.device == jcRight)
+        {
+            jumpedPressed = context.ReadValueAsButton();
         }
     }
 }
