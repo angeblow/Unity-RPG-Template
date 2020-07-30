@@ -135,7 +135,7 @@
                 {
                     "name": "",
                     "id": "fd1796ff-d7f5-42d7-b1ff-b8f2e3ed64d4",
-                    "path": "<HID::Nintendo Wireless Gamepad>/trigger",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button3",
                     "interactions": "",
                     "processors": "",
                     "groups": "DualJoycon",
@@ -146,7 +146,7 @@
                 {
                     "name": "",
                     "id": "2bd91e52-9412-4ee3-9994-9c7a2424540c",
-                    "path": "<HID::Nintendo Wireless Gamepad>/button3",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button2",
                     "interactions": "",
                     "processors": "",
                     "groups": "DualJoycon",

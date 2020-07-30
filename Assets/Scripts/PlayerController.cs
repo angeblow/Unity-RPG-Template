@@ -41,9 +41,10 @@ public class PlayerController : MonoBehaviour
     Image staminaWheel;
 
     bool jumpedPressed = false;
-    float jumpApexTime = 1.4f;
-    float jumpTimeStamp;
     Vector3 playerVerticalVelocity;
+    float jumpSpeed = 8.0f;
+    float gravity = 9.81f;
+
 
     InputDevice jcLeft;
     InputDevice jcRight;
@@ -60,8 +61,6 @@ public class PlayerController : MonoBehaviour
 
         rStickVector = new Vector2();
         cameraVector = new Vector3();
-
-        jumpTimeStamp = Time.time;
 
         InputUser.PerformPairingWithDevice(InputSystem.devices[2], user);
         InputUser.PerformPairingWithDevice(InputSystem.devices[3], user);
@@ -81,15 +80,20 @@ public class PlayerController : MonoBehaviour
         {
             animations.SetBool("isMoving", false);
         }
-
-
-        movementVector.Set(-stickVector.y, 0, stickVector.x);
+        if(controller.isGrounded && jumpedPressed)
+        {
+            playerVerticalVelocity.y = jumpSpeed;
+        }
+        playerVerticalVelocity.y -=  gravity * Time.deltaTime;
+        animations.SetFloat("yVel", playerVerticalVelocity.y);
+        movementVector.Set(-stickVector.y, 0f, stickVector.x);
+        controller.Move(playerVerticalVelocity * Time.deltaTime);
         cameraVector.Set(cameraVector.x + rStickVector.x, cameraVector.y + rStickVector.y, 0);
     }
 
     void FixedUpdate()
     {
-        //animations.SetFloat("yVel", -controller.velocity.y);
+
         animations.SetBool("isGrounded", controller.isGrounded);
         staminaWheel.fillAmount = currentStamina / maxStamina;
         if (isExhausted)
@@ -136,22 +140,6 @@ public class PlayerController : MonoBehaviour
             Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDirection.normalized * movementSpeed * Time.deltaTime);
         }
-
-        //playerVerticalVelocity -= Vector3.down * 9.81f;
-        if (!controller.isGrounded)
-        {
-            playerVerticalVelocity = 9.81f * Vector3.down;
-        }
-        else
-        {
-            playerVerticalVelocity = Vector3.down;
-            if (jumpedPressed == true && Time.time > jumpTimeStamp + jumpApexTime)
-            {
-                jumpTimeStamp = Time.time;
-                playerVerticalVelocity +=  Vector3.up * 26f;
-            }
-        }
-        controller.Move(playerVerticalVelocity * Time.deltaTime);
     }
 
     void LateUpdate()
