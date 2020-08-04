@@ -3,36 +3,28 @@
     "maps": [
         {
             "name": "Player",
-            "id": "eacc5da0-1274-46ab-bf56-364d865c49da",
+            "id": "811bc723-1a1c-46c9-9e7a-5398d69d4085",
             "actions": [
                 {
                     "name": "Move",
                     "type": "PassThrough",
-                    "id": "9863baeb-2e4c-4309-97f5-f6eda4d23fe1",
+                    "id": "c772f7ec-cbfb-4381-8597-5f1ee83c8683",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
                 },
                 {
-                    "name": "Camera",
+                    "name": "Look",
                     "type": "PassThrough",
-                    "id": "88cbd2ce-e42f-4d01-9af3-56f6cf8912ec",
+                    "id": "cd5b59df-6ee9-4d24-94e6-2eaac38d89c5",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
                 },
                 {
-                    "name": "FindLeft",
+                    "name": "Jump",
                     "type": "Button",
-                    "id": "da9fc016-4bcc-44f4-8d9d-78d5665a7d3d",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "FindRight",
-                    "type": "Button",
-                    "id": "4fb6386f-862d-4ec5-bc82-ad8eb08355f4",
+                    "id": "398dcd91-ce05-4ea8-b109-1cf6edee8a0d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -40,15 +32,39 @@
                 {
                     "name": "Sprint",
                     "type": "Button",
-                    "id": "ebc4def8-9096-46e7-9210-161aebc4a080",
+                    "id": "e770ec32-87c2-46de-9393-fcd01f25ace8",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
                 {
-                    "name": "Jump",
+                    "name": "Attack",
                     "type": "Button",
-                    "id": "8456cfbd-de24-476c-a8ad-2ff428eec6b4",
+                    "id": "b2eb162d-d4b1-47ab-9cff-2db71de32af0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Focus",
+                    "type": "Button",
+                    "id": "4d5ccfa5-f0ff-4aa9-b2e3-2eb37760eaf6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "JoyLeft",
+                    "type": "Button",
+                    "id": "cddc61d6-a24c-4873-8db0-3632592d1a85",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "JoyRight",
+                    "type": "Button",
+                    "id": "66c455c1-ad3e-4868-80a4-393523ea68b9",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -57,100 +73,243 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "c6af266b-dc48-431f-9e87-2be20823bc60",
-                    "path": "<HID::Nintendo Wireless Gamepad>/hat",
+                    "id": "978bfe49-cc26-4a3d-ab7b-7d7a29327403",
+                    "path": "<SwitchProControllerHID>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "DualJoycon",
+                    "groups": "ProController",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "3093b1c2-1cf7-4de4-8e42-501fd09fba09",
-                    "path": "<HID::Unknown Joy-Con (L)>/hat",
+                    "id": "c4c49943-2050-4168-8634-468cab78bf06",
+                    "path": "<HID::Nintendo Wireless Gamepad>/hat",
                     "interactions": "",
                     "processors": "",
-                    "groups": "DualJoycon",
+                    "groups": "DualJoyCon",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "d842cb65-5ebf-4fc7-9f20-902e2290baf2",
+                    "id": "df75a7c0-d697-456c-b6c7-3be4b1a02dce",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ProController",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c1f7a91b-d0fd-4a62-997e-7fb9b69bf235",
+                    "path": "<SwitchProControllerHID>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ProController",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c252ce51-5421-42a0-b296-0b27f5cf03e7",
                     "path": "<HID::Nintendo Wireless Gamepad>/hat",
                     "interactions": "",
                     "processors": "",
-                    "groups": "DualJoycon",
-                    "action": "Camera",
+                    "groups": "DualJoyCon",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "98e06f85-9d2b-45e8-9392-1537ff65ee1b",
-                    "path": "<HID::Unknown Joy-Con (R)>/hat",
+                    "id": "ebaf6871-bacd-4e68-aaf3-e476921fe7ef",
+                    "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "DualJoycon",
-                    "action": "Camera",
+                    "groups": "ProController",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "2518ca16-fc54-4ef4-b5d5-2db896248bad",
-                    "path": "<HID::Nintendo Wireless Gamepad>/button15",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "DualJoycon",
-                    "action": "FindLeft",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "17ed6b67-5c95-4938-aa72-3acaaebc9c88",
-                    "path": "<HID::Nintendo Wireless Gamepad>/button16",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "DualJoycon",
-                    "action": "FindRight",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "fdc99332-bbd5-43f0-bcc6-14c5bdfaf109",
-                    "path": "<HID::Unknown Joy-Con (R)>/trigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "DualJoycon",
-                    "action": "Sprint",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "fd1796ff-d7f5-42d7-b1ff-b8f2e3ed64d4",
-                    "path": "<HID::Nintendo Wireless Gamepad>/button3",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "DualJoycon",
-                    "action": "Sprint",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2bd91e52-9412-4ee3-9994-9c7a2424540c",
+                    "id": "89aa224e-3107-4ed6-9fbb-43e0fa5d6c69",
                     "path": "<HID::Nintendo Wireless Gamepad>/button2",
                     "interactions": "",
                     "processors": "",
-                    "groups": "DualJoycon",
+                    "groups": "DualJoyCon",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "39d5d6cb-fa31-41c0-8cf2-7810dc7de875",
+                    "path": "<SwitchProControllerHID>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ProController",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c7807ae0-cd9a-4c70-ad05-1101df502b7a",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ProController",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3397b585-edf1-413d-b51d-cb08ef479631",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "DualJoyCon",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "12ac7b2a-2850-4913-aeb2-2735ac50d146",
+                    "path": "<SwitchProControllerHID>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ProController",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "914b4dee-854f-4d23-8aa0-2356371a16a8",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ProController",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0444fc1e-58c4-4875-9d9b-326a10ba2333",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "DualJoyCon",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c6303185-4508-4b1d-8c39-ed1987334275",
+                    "path": "<SwitchProControllerHID>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ProController",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "63a93237-4297-4d52-b61c-4c2a24d8785e",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ProController",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d8a74ccd-dfc3-4542-a66e-fe73478a9153",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button16",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "DualJoyCon",
+                    "action": "Focus",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a4870997-2116-420d-bf84-1436ad59f0db",
+                    "path": "<SwitchProControllerHID>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ProController",
+                    "action": "Focus",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a28a7e03-6295-4508-b102-4dfa6237f6c6",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ProController",
+                    "action": "Focus",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5112b73d-19e7-433a-9e8c-f3d4002f2392",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button14",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "DualJoyCon",
+                    "action": "JoyLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "87801754-9d0e-474e-9861-14dbb4aa80f7",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button13",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "DualJoyCon",
+                    "action": "JoyRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0fbcf034-ecdb-4777-a2cb-9a9792d398f2",
+                    "path": "<SwitchProControllerHID>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ProController",
+                    "action": "JoyRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "107904e9-f7f0-48b3-a101-4c3a58d7d788",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ProController",
+                    "action": "JoyRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -158,12 +317,12 @@
         },
         {
             "name": "UI",
-            "id": "31341680-bbd3-41b4-9040-208a711918a9",
+            "id": "8f98f6cb-9011-41e9-a61c-3d3978e3a7d3",
             "actions": [
                 {
                     "name": "Navigate",
                     "type": "PassThrough",
-                    "id": "8ce4859e-b807-4a2d-8e4e-720aedecc0e0",
+                    "id": "b05e3c0a-206e-468a-a930-a239855f643a",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
@@ -171,7 +330,7 @@
                 {
                     "name": "Submit",
                     "type": "Button",
-                    "id": "15184916-00d2-4e99-a34b-0d89642d8b60",
+                    "id": "6d83fe64-4674-4f3f-a8eb-6fa0afda0dfa",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -179,7 +338,7 @@
                 {
                     "name": "Cancel",
                     "type": "Button",
-                    "id": "7ee70dea-c45c-42f5-bf77-f35686a2870c",
+                    "id": "c0823616-c0f1-4f94-ba46-abf75bd42005",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -187,7 +346,7 @@
                 {
                     "name": "Point",
                     "type": "PassThrough",
-                    "id": "0c9792b8-fb92-410a-9266-4e00682dff30",
+                    "id": "1d04d2f7-93c2-40f6-87b1-0658c8cab205",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
@@ -195,23 +354,7 @@
                 {
                     "name": "Click",
                     "type": "PassThrough",
-                    "id": "82b98688-0167-43f4-aa4d-2f5a3b571ec6",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "MiddleClick",
-                    "type": "PassThrough",
-                    "id": "86521a1e-4a57-44ca-8b04-d98328c95ebd",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "RightClick",
-                    "type": "PassThrough",
-                    "id": "88572d13-77a7-408d-867c-d7871cbe91eb",
+                    "id": "3e98c584-d025-47c8-a4f5-7ff124c0efe0",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -219,15 +362,31 @@
                 {
                     "name": "ScrollWheel",
                     "type": "PassThrough",
-                    "id": "85886644-6a66-47bb-8aca-cb8da4e13dc6",
+                    "id": "e8adcde0-a3f0-42d6-962e-be0dd07e4cac",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "MiddleClick",
+                    "type": "PassThrough",
+                    "id": "1e09533f-6a30-4d32-bf31-3cb39c12d590",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RightClick",
+                    "type": "PassThrough",
+                    "id": "eaabbd37-a6d5-42e6-b604-4a2aa5398f09",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
                 },
                 {
                     "name": "TrackedDevicePosition",
                     "type": "PassThrough",
-                    "id": "8e263c8e-c708-4645-8858-0282cb93fe81",
+                    "id": "41a48ae0-2ca8-4c7d-b69c-841720315cd5",
                     "expectedControlType": "Vector3",
                     "processors": "",
                     "interactions": ""
@@ -235,7 +394,7 @@
                 {
                     "name": "TrackedDeviceOrientation",
                     "type": "PassThrough",
-                    "id": "3d18813e-3406-4291-8681-0ea89e352984",
+                    "id": "473ae099-9bee-4f2e-ab80-c94e0969b996",
                     "expectedControlType": "Quaternion",
                     "processors": "",
                     "interactions": ""
@@ -243,8 +402,8 @@
             ],
             "bindings": [
                 {
-                    "name": "LeftJoyconStick",
-                    "id": "66e6d30c-eb55-4535-a54b-6ede24f65302",
+                    "name": "Gamepad",
+                    "id": "809f371f-c5e2-4e7a-83a1-d867598f40dd",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -255,144 +414,342 @@
                 },
                 {
                     "name": "up",
-                    "id": "cee833b0-a35b-47dc-a2ac-4ebebe4947e9",
-                    "path": "<HID::Nintendo Wireless Gamepad>/hat/left",
+                    "id": "14a5d6e8-4aaf-4119-a9ef-34b8c2c548bf",
+                    "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "DualJoycon",
+                    "groups": "",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "up",
+                    "id": "9144cbe6-05e1-4687-a6d7-24f99d23dd81",
+                    "path": "<Gamepad>/rightStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "b294b0ae-2b53-4614-937c-ba11016f8500",
-                    "path": "<HID::Nintendo Wireless Gamepad>/hat/right",
+                    "id": "2db08d65-c5fb-421b-983f-c71163608d67",
+                    "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "DualJoycon",
+                    "groups": "",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "58748904-2ea9-4a80-8579-b500e6a76df8",
+                    "path": "<Gamepad>/rightStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "08732bf7-1a0c-4dbc-ac67-623f67ca5b2c",
-                    "path": "<HID::Nintendo Wireless Gamepad>/hat/down",
+                    "id": "8ba04515-75aa-45de-966d-393d9bbd1c14",
+                    "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "DualJoycon",
+                    "groups": "",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "712e721c-bdfb-4b23-a86c-a0d9fcfea921",
+                    "path": "<Gamepad>/rightStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "fc5c0348-3927-45ac-a6dd-f2df1c50e84e",
+                    "id": "fcd248ae-a788-4676-a12e-f4d81205600b",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "1f04d9bc-c50b-41a1-bfcc-afb75475ec20",
+                    "path": "<Gamepad>/rightStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Keyboard",
+                    "id": "ff527021-f211-4c02-933e-5976594c46ed",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navigate",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "563fbfdd-0f09-408d-aa75-8642c4f08ef0",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "up",
+                    "id": "eb480147-c587-4a33-85ed-eb0ab9942c43",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "2bf42165-60bc-42ca-8072-8c13ab40239b",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "85d264ad-e0a0-4565-b7ff-1a37edde51ac",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "74214943-c580-44e4-98eb-ad7eebe17902",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "cea9b045-a000-445b-95b8-0c171af70a3b",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "8607c725-d935-4808-84b1-8354e29bab63",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "4cda81dc-9edd-4e03-9d7c-a71a14345d0b",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Joycon",
+                    "id": "2e45aa0f-7f60-4ede-a9e2-82838f6f54f2",
+                    "path": "2DVector(mode=2)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navigate",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "6342dc84-700d-4497-a2fc-7936d494a892",
+                    "path": "<HID::Nintendo Wireless Gamepad>/hat/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "DualJoyCon",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "30f5dc89-a79b-42b4-a7c8-c620d9f9500a",
+                    "path": "<HID::Nintendo Wireless Gamepad>/hat/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "DualJoyCon",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "393d995d-e3b3-4025-9862-d2daaed35737",
+                    "path": "<HID::Nintendo Wireless Gamepad>/hat/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "DualJoyCon",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "64b92e1a-86de-4306-ab87-4eb1b5ba4fd1",
                     "path": "<HID::Nintendo Wireless Gamepad>/hat/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "DualJoycon",
+                    "groups": "DualJoyCon",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "",
-                    "id": "01af0069-00c9-4efa-ba58-eef0b643914b",
+                    "id": "9e92bb26-7e3b-4ec4-b06b-3c8f8e498ddc",
                     "path": "<HID::Nintendo Wireless Gamepad>/trigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "DualJoycon",
+                    "groups": "DualJoyCon",
                     "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "77fd4dd9-a5d4-4b4d-9fc9-6543644b5b0b",
+                    "id": "82627dcc-3b13-4ba9-841d-e4b746d6553e",
                     "path": "<HID::Nintendo Wireless Gamepad>/button3",
                     "interactions": "",
                     "processors": "",
-                    "groups": "DualJoycon",
+                    "groups": "DualJoyCon",
                     "action": "Cancel",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "c0c0693a-fc39-4893-ab7f-8cfdacc46cbd",
+                    "id": "c52c8e0b-8179-41d3-b8a1-d149033bbe86",
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "Point",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "38e57093-65fa-4114-adaf-aee8d22a20e8",
+                    "id": "e1394cbc-336e-44ce-9ea8-6007ed6193f7",
+                    "path": "<Pen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4faf7dc9-b979-4210-aa8c-e808e1ef89f5",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "aac4ed4b-96bb-4112-b67b-d715f95ad5dd",
-                    "path": "<Mouse>/middleButton",
+                    "id": "8d66d5ba-88d7-48e6-b1cd-198bbfef7ace",
+                    "path": "<Pen>/tip",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "MiddleClick",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "871b747e-451f-4b3d-8a08-55b55f685e75",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RightClick",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "38ab7428-6140-4ae8-926c-51f2d6775c26",
+                    "id": "38c99815-14ea-4617-8627-164d27641299",
                     "path": "<Mouse>/scroll",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "ScrollWheel",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "32da7972-a0b6-42b5-95d0-c6406dd737dd",
-                    "path": "<XRController>/devicePosition",
+                    "id": "24066f69-da47-44f3-a07e-0015fb02eb2e",
+                    "path": "<Mouse>/middleButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "TrackedDevicePosition",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "MiddleClick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "df233f6b-02ce-4bf3-8aec-ebec89b3afb2",
-                    "path": "<XRController>/deviceRotation",
+                    "id": "4c191405-5738-4d4b-a523-c6a301dbf754",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "TrackedDeviceOrientation",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "RightClick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -401,9 +758,36 @@
     ],
     "controlSchemes": [
         {
-            "name": "DualJoycon",
-            "bindingGroup": "DualJoycon",
+            "name": "Keyboard&Mouse",
+            "bindingGroup": "Keyboard&Mouse",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "DualJoyCon",
+            "bindingGroup": "DualJoyCon",
             "devices": []
+        },
+        {
+            "name": "ProController",
+            "bindingGroup": "ProController",
+            "devices": [
+                {
+                    "devicePath": "<SwitchProControllerHID>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
         }
     ]
 }
