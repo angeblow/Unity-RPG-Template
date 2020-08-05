@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     PlayerCamera cam;
 
-    CharacterController controller;
+    Rigidbody rb;
+
 
     Vector3 movementVector;
     float turnSmoothTime = 0.12f;
@@ -40,6 +41,8 @@ public class PlayerController : MonoBehaviour
     Vector3 playerVerticalVelocity;
     float jumpSpeed = 8.0f;
     float gravity = 9.81f;
+    public bool grounded = false;
+
 
 
 
@@ -49,7 +52,7 @@ public class PlayerController : MonoBehaviour
         currentStamina = 10f;
         maxStamina = 60f;
         isExhausted = false;
-        controller = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
 
     }
 
@@ -113,18 +116,18 @@ public class PlayerController : MonoBehaviour
     }
     void Vertical()
     {
-        animator.SetBool("isGrounded", controller.isGrounded);
-        if (controller.isGrounded)
+        RaycastHit hit;
+        if(Physics.SphereCast(transform.position, 1f, Vector3.down,  out hit, 0f, 10))
         {
-            animator.SetFloat("yVel", 0);
+            grounded = true;
+            
         }
         else
         {
-            animator.SetFloat("yVel", playerVerticalVelocity.y);
+            grounded = false;
         }
-        
-        playerVerticalVelocity.y -= gravity * Time.deltaTime;
-        controller.Move(playerVerticalVelocity * Time.deltaTime);
+        animator.SetBool("isGrounded", grounded);
+        animator.SetFloat("yVel", rb.velocity.y);
     }
     void MovePlayer()
     {
@@ -134,12 +137,12 @@ public class PlayerController : MonoBehaviour
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
             Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(moveDirection.normalized * movementSpeed * Time.deltaTime);
+            rb.velocity = moveDirection.normalized * movementSpeed;
         }
     }
     void Jump()
     {
-        if(controller.isGrounded && input.jumpPressed)
+        if(grounded && input.jumpPressed)
         {
             playerVerticalVelocity.y = jumpSpeed;
         }

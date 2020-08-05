@@ -113,7 +113,7 @@ public class PlayerInputReciever : MonoBehaviour
             JoyConLeft = context.control.device;
         }
         // This currently doesn't work
-        else if (inputUser.controlScheme.ToString() == "ProController()")
+        else if (inputUser.controlScheme.ToString() == "ProController(<SwitchProControllerHID>)")
         {
             JoyConLeft = context.control.device;
             inputUser.ActivateControlScheme("DualJoyCon");
@@ -128,7 +128,7 @@ public class PlayerInputReciever : MonoBehaviour
                 attackPressed = context.ReadValueAsButton();
             }
         }
-        else if (inputUser.controlScheme.ToString() == "ProController()")
+        else if (inputUser.controlScheme.ToString() == "ProController(<SwitchProControllerHID>)")
         {
             attackPressed = context.ReadValueAsButton();
         }
@@ -142,9 +142,9 @@ public class PlayerInputReciever : MonoBehaviour
                 jumpPressed = context.ReadValueAsButton();
             }
         }
-        else if (inputUser.controlScheme.ToString() == "ProController()")
+        else if (inputUser.controlScheme.ToString() == "ProController(<SwitchProControllerHID>)")
         {
-            Debug.LogAssertion("Jump Pressed from Pro");
+            //Debug.LogAssertion("Jump Pressed from Pro");
             jumpPressed = context.ReadValueAsButton();
         }
     }
@@ -157,7 +157,7 @@ public class PlayerInputReciever : MonoBehaviour
                 sprintPressed = context.ReadValueAsButton();
             }
         }
-        else if (inputUser.controlScheme.ToString() == "ProController()")
+        else if (inputUser.controlScheme.ToString() == "ProController(<SwitchProControllerHID>)")
         {
             sprintPressed = context.ReadValueAsButton();
         }
@@ -173,7 +173,7 @@ public class PlayerInputReciever : MonoBehaviour
                 ProGamepad = Gamepad.current;
             }
         }
-        else if (inputUser.controlScheme.ToString() == "ProController()")
+        else if (inputUser.controlScheme.ToString() == "ProController(<SwitchProControllerHID>)")
         {
             foreach (var gp in Gamepad.all)
             {

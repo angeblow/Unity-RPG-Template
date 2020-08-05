@@ -667,11 +667,33 @@
                 },
                 {
                     "name": "",
+                    "id": "a411e989-88d4-4052-b0ab-3fafda47555e",
+                    "path": "<SwitchProControllerHID>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ProController",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "82627dcc-3b13-4ba9-841d-e4b746d6553e",
                     "path": "<HID::Nintendo Wireless Gamepad>/button3",
                     "interactions": "",
                     "processors": "",
                     "groups": "DualJoyCon",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9fb4e5c4-85b2-462d-a9de-4afc8fc32491",
+                    "path": "<SwitchProControllerHID>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "ProController",
                     "action": "Cancel",
                     "isComposite": false,
                     "isPartOfComposite": false
